@@ -1,4 +1,5 @@
 // Длинна строки
+// eslint-disable-next-line no-unused-vars
 function isLess(string, length) {
   if (string.length <= length) {
     return true;
@@ -9,6 +10,7 @@ function isLess(string, length) {
 
 
 // Полиндром
+// eslint-disable-next-line no-unused-vars
 const isPolindrom = (string) => {
   const tempString = string
     .toLowerCase()
@@ -18,10 +20,11 @@ const isPolindrom = (string) => {
     reverseString += tempString.at(i);
   }
   return tempString === reverseString;
-}
+};
 
 
 // Извлечение числа из строки
+// eslint-disable-next-line no-unused-vars
 const extractNumber = (string) => {
   if (typeof string === 'number') {
     return string;
@@ -34,9 +37,10 @@ const extractNumber = (string) => {
   }
 
   return parseInt(result, 10);
-}
+};
 
 // Последнее задание
+// eslint-disable-next-line no-unused-vars
 const myPadSrart = (string, minLength, pad) => {
   const actualPad = minLength - string.length;
 
@@ -44,4 +48,4 @@ const myPadSrart = (string, minLength, pad) => {
     return string;
   }
   return pad.slice(0, actualPad % pad.length) + pad.repeat(actualPad / pad.length) + string;
-}
+};
