@@ -1,0 +1,51 @@
+// Длинна строки
+// eslint-disable-next-line no-unused-vars
+function isLess(string, length) {
+  if (string.length <= length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+
+// Полиндром
+// eslint-disable-next-line no-unused-vars
+const isPolindrom = (string) => {
+  const tempString = string
+    .toLowerCase()
+    .replaceAll(' ', '');
+  let reverseString = '';
+  for (let i = tempString.length - 1; i >= 0; i--) {
+    reverseString += tempString.at(i);
+  }
+  return tempString === reverseString;
+};
+
+
+// Извлечение числа из строки
+// eslint-disable-next-line no-unused-vars
+const extractNumber = (string) => {
+  if (typeof string === 'number') {
+    return string;
+  }
+  let result = '';
+  for (let i = 0; i < string.length; i++) {
+    if (!Number.isNaN(parseInt(string.at(i), 10))) {
+      result += string.at(i);
+    }
+  }
+
+  return parseInt(result, 10);
+};
+
+// Последнее задание
+// eslint-disable-next-line no-unused-vars
+const myPadSrart = (string, minLength, pad) => {
+  const actualPad = minLength - string.length;
+
+  if (actualPad <= 0) {
+    return string;
+  }
+  return pad.slice(0, actualPad % pad.length) + pad.repeat(actualPad / pad.length) + string;
+};
