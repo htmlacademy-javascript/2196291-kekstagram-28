@@ -1,17 +1,11 @@
 // Длинна строки
 // eslint-disable-next-line no-unused-vars
-function isLess(string, length) {
-  if (string.length <= length) {
-    return true;
-  } else {
-    return false;
-  }
-}
+const isLess = (string, length) => string.length <= length;
 
 
 // Полиндром
 // eslint-disable-next-line no-unused-vars
-const isPolindrom = (string) => {
+function isPolindrom(string) {
   const tempString = string
     .toLowerCase()
     .replaceAll(' ', '');
@@ -20,7 +14,7 @@ const isPolindrom = (string) => {
     reverseString += tempString.at(i);
   }
   return tempString === reverseString;
-};
+}
 
 
 // Извлечение числа из строки
@@ -39,7 +33,9 @@ const extractNumber = (string) => {
   return parseInt(result, 10);
 };
 
-// Последнее задание
+// Функция, которая принимает три параметра: исходную строку,
+// минимальную длину и строку с добавочными символами — и возвращает исходную строку,
+// дополненную указанными символами до заданной длины.
 // eslint-disable-next-line no-unused-vars
 const myPadSrart = (string, minLength, pad) => {
   const actualPad = minLength - string.length;
