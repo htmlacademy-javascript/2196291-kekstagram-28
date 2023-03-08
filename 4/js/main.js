@@ -86,7 +86,6 @@ const createPicture = (pictureId) => {
 
 
 const similarPicture = () => {
-  const keksPicrure = new Array(PICTURE_COUNT).fill().map((_, index) => createPicture(index + 1));
-  return keksPicrure;
+  new Array(PICTURE_COUNT).fill().map((_, index) => createPicture(index + 1));
 };
 similarPicture();
