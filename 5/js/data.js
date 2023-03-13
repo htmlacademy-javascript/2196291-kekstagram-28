@@ -1,13 +1,33 @@
-import { getRandomInteger } from './random-function.js';
-import { PICTURE_COUNT } from './setup-const.js';
-import { AVATAR_COUNT } from './setup-const.js';
-import { LIKE_MIN_COUNT } from './setup-const.js';
-import { LIKE_MAX_COUNT } from './setup-const.js';
-import { MAX_COMMENT_INDEX } from './setup-const.js';
-import { MAX_COMMENT_COUNT } from './setup-const.js';
-import { COMMENT_MESSEGE } from './setup-const.js';
-import { DESCRIPTIONS } from './setup-const.js';
-import { NAMES } from './setup-const.js';
+// import { PICTURE_COUNT } from './setup-const.js';
+// import { AVATAR_COUNT } from './setup-const.js';
+// import { LIKE_MIN_COUNT } from './setup-const.js';
+// import { LIKE_MAX_COUNT } from './setup-const.js';
+// import { MAX_COMMENT_INDEX } from './setup-const.js';
+// import { MAX_COMMENT_COUNT } from './setup-const.js';
+// import { COMMENT_MESSEGE } from './setup-const.js';
+// import { DESCRIPTIONS } from './setup-const.js';
+// import { NAMES } from './setup-const.js';
+
+import {
+  PICTURE_COUNT,
+  AVATAR_COUNT,
+  LIKE_MIN_COUNT,
+  LIKE_MAX_COUNT,
+  MAX_COMMENT_INDEX,
+  MAX_COMMENT_COUNT,
+  COMMENT_MESSEGE,
+  DESCRIPTIONS,
+  NAMES
+} from './setup-const.js';
+
+
+//генерация рамдомного ID элемента
+const getRandomInteger = (a, b) => {
+  const lower = Math.ceil(Math.min(a, b));
+  const upper = Math.floor(Math.max(a, b));
+  const result = Math.random() * (upper - lower + 1) + lower;
+  return Math.floor(result);
+};
 
 // функция по поиску случайного элемента в массиве
 const getRandomArrayElement = (array) => array[getRandomInteger(0, array.length - 1)];
@@ -24,23 +44,22 @@ const createComment = () => {
   };
 };
 
+
 // функция создает объекты
-const createPicture = (pictureId) => {
+function createPicture(pictureId) {
   const randomLikeIndex = getRandomInteger(LIKE_MIN_COUNT, LIKE_MAX_COUNT); // рамдомное колличество лайков
 
   return {
     id: pictureId,
     url: `photos/${pictureId}.jpg`,
-    description: getRandomArrayElement(DESCRIPTIONS), // случайное описание фото из массива DESCRIPTIONS
-    like: randomLikeIndex, // колличество лайков
+    description: getRandomArrayElement(DESCRIPTIONS),
+    like: randomLikeIndex,
     comments: Array.from({ length: getRandomInteger(1, MAX_COMMENT_COUNT) }, createComment),
-
   };
-};
+}
 
 
 const similarPicture = () => new Array(PICTURE_COUNT).fill().map((_, index) => createPicture(index + 1));
 
-similarPicture();
 
 export { similarPicture };
