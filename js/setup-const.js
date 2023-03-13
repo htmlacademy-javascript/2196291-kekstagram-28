@@ -39,12 +39,14 @@ const NAMES = [
   'Пендальф Серый'
 ];
 
-export { PICTURE_COUNT };
-export { AVATAR_COUNT };
-export { LIKE_MIN_COUNT };
-export { LIKE_MAX_COUNT };
-export { MAX_COMMENT_INDEX };
-export { MAX_COMMENT_COUNT };
-export { COMMENT_MESSEGE };
-export { DESCRIPTIONS };
-export { NAMES };
+export {
+  PICTURE_COUNT,
+  AVATAR_COUNT,
+  LIKE_MIN_COUNT,
+  LIKE_MAX_COUNT,
+  MAX_COMMENT_INDEX,
+  MAX_COMMENT_COUNT,
+  COMMENT_MESSEGE,
+  DESCRIPTIONS,
+  NAMES
+};
