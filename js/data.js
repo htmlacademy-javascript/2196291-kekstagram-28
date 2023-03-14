@@ -1,13 +1,3 @@
-// import { PICTURE_COUNT } from './setup-const.js';
-// import { AVATAR_COUNT } from './setup-const.js';
-// import { LIKE_MIN_COUNT } from './setup-const.js';
-// import { LIKE_MAX_COUNT } from './setup-const.js';
-// import { MAX_COMMENT_INDEX } from './setup-const.js';
-// import { MAX_COMMENT_COUNT } from './setup-const.js';
-// import { COMMENT_MESSEGE } from './setup-const.js';
-// import { DESCRIPTIONS } from './setup-const.js';
-// import { NAMES } from './setup-const.js';
-
 import {
   PICTURE_COUNT,
   AVATAR_COUNT,
