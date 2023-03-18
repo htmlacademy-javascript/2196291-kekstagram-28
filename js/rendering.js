@@ -1,25 +1,17 @@
-import { similarPicture } from './data.js';
-
-// находим шаблон
-const templatePicture = document.querySelector('#picture').content.querySelector('.picture');
-
-// находим контейнер для изображений
-const pictureContainer = document.querySelector('.pictures');
+const getTemplatePicture = () => document.querySelector('#picture').content.querySelector('.picture');
 
 
-const createThumbnails = similarPicture();
-
-// создаем фрагмент для изображений
-const pictureFragment = document.createDocumentFragment();
-
-// создаем миниатюры
-createThumbnails.forEach(({ url, like, comments }) => {
-  const userPicture = templatePicture.cloneNode(true);
+const createUserPicture = ({ url, like, comments }) => {
+  const userPicture = getTemplatePicture().cloneNode(true);
   userPicture.querySelector('.picture__img').src = url;
   userPicture.querySelector('.picture__likes').textContent = like;
   userPicture.querySelector('.picture__comments').textContent = comments.length;
+  return userPicture;
+};
 
-  pictureFragment.appendChild(userPicture);
-});
+const addThumbnailsToContainer = (pictures, container) => {
+  const userPictures = pictures.map(({ url, like, comments }) => createUserPicture({ url, like, comments }));
+  container.append(...userPictures);
+};
 
-pictureContainer.appendChild(pictureFragment);
+export { addThumbnailsToContainer };
