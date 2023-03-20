@@ -1,3 +1,7 @@
 import { similarPicture } from './data.js';
-// eslint-disable-next-line no-console
-console.log(similarPicture());
+import { addThumbnailsToContainer } from './rendering.js';
+
+const pictures = similarPicture();
+const pictureContainer = document.querySelector('.pictures');
+
+addThumbnailsToContainer(pictures, pictureContainer);
