@@ -3,8 +3,8 @@ const bigPicture = document.querySelector('.big-picture__preview');
 const bigPicturesContainer = document.querySelector('.big-picture');
 const commentsContainer = bigPicture.querySelector('.social__comments');
 const commentTemplate = commentsContainer.querySelector('.social__comment');
-const commentCount = document.querySelector('.social__comment-count');
-const commentLoader = document.querySelector('.comments-loader');
+const commentCount = bigPicture.querySelector('.social__comment-count');
+const commentLoader = bigPicture.querySelector('.comments-loader');
 
 
 const renderComment = (({ avatar, name, message }) => {
