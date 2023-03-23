@@ -5,3 +5,6 @@ const pictures = similarPicture();
 const pictureContainer = document.querySelector('.pictures');
 
 addThumbnailsToContainer(pictures, pictureContainer);
+
+import './big-picture.js';
+import './gallery.js';
