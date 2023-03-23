@@ -3,6 +3,9 @@ const bigPicture = document.querySelector('.big-picture__preview');
 const bigPicturesContainer = document.querySelector('.big-picture');
 const commentsContainer = bigPicture.querySelector('.social__comments');
 const commentTemplate = commentsContainer.querySelector('.social__comment');
+const commentCount = document.querySelector('.social__comment-count');
+const commentLoader = document.querySelector('.comments-loader');
+
 
 const renderComment = (({ avatar, name, message }) => {
   const comment = commentTemplate.cloneNode(true);
@@ -25,6 +28,8 @@ const createCommentsList = (comments) => {
 const renderBigPicture = ({ url, description, like, comments }) => {
   bigPicturesContainer.classList.remove('hidden');
   document.body.classList.add('modal-open');
+  commentCount.classList.add('hidden');
+  commentLoader.classList.add('hidden');
   bigPicture.querySelector('.big-picture__img img').src = url;
   bigPicture.querySelector('.big-picture__img img').alt = description;
   bigPicture.querySelector('.likes-count').textContent = like;
